@@ -14,24 +14,33 @@ let docOne = addUID({
 
 console.log('🔥', docOne.name)
 
+// ENUMS
+enum resourceType {
+   BOOK,
+   AUTHOR,
+   FILM,
+   DIRECTOR,
+   PERSON
+}
+
 // ⚡Generics with Interface
 interface Resource<T> {
    uid: number,
-   resourceName: string,
+   resourceType: resourceType,
    data: T
 }
 
 const docThree: Resource<object> = {
    uid: 1,
-   resourceName: 'person',
+   resourceType: resourceType.PERSON,
    data: { name: 'Jane' }
 }
-console.log('⚡', docThree.data)
+console.log('⚡', docThree)
 
 const docFour: Resource<string[]> = {
    uid: 2,
-   resourceName: 'cart',
-   data: ['phone','food','chair']
+   resourceType: resourceType.BOOK,
+   data: ['phone', 'food', 'chair']
 }
 
 console.log('⚡', docFour)
