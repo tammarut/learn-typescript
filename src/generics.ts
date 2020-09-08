@@ -1,5 +1,5 @@
 // ⛔GENERICS
-const addUID = <T extends {name:string}>(obj: T) => {
+const addUID = <T extends object>(obj: T) => {
    let uid = Math.floor(Math.random() * 100)
    return { ...obj, uid }
 }
@@ -26,6 +26,7 @@ const docThree: Resource<object> = {
    resourceName: 'person',
    data: { name: 'Jane' }
 }
+console.log('⚡', docThree.data)
 
 const docFour: Resource<string[]> = {
    uid: 2,
