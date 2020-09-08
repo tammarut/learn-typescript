@@ -1,8 +1,8 @@
 "use strict";
-let nums = [1, 2, 3];
+var nums = [1, 2, 3];
 console.log("🔥", nums);
 // 🌀Tuple
-let studentAndScore;
+var studentAndScore;
 studentAndScore = ["Foo", 12];
 console.log("①", studentAndScore);
 // 📚 Enum
@@ -14,13 +14,13 @@ var TrafficLight;
 })(TrafficLight || (TrafficLight = {}));
 console.log("🔥", TrafficLight);
 // Any
-let list = [12, "foo", true];
+var list = [12, "foo", true];
 console.log("🔥", list);
 // void
 function setName(name) {
-    this.name = name;
+    console.log("🔥", name);
 }
 // Type Assertions
-let iAmString = "Hell";
-let strLen = iAmString.length;
+var iAmString = "Hell";
+var strLen = iAmString.length;
 console.log("💨", strLen);

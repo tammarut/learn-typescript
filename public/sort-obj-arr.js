@@ -1,5 +1,5 @@
 "use strict";
-let obj = [
+var obj = [
     {
         title: "a",
         done: true
@@ -18,7 +18,7 @@ let obj = [
     }
 ];
 console.log("🔴Before:", obj);
-obj.sort((a, b) => {
+obj.sort(function (a, b) {
     return a.done - b.done;
 });
 console.log("🟢After:", obj);

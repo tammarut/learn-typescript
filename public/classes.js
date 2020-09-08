@@ -1,36 +1,33 @@
 "use strict";
-const jame = {
+Object.defineProperty(exports, "__esModule", { value: true });
+var invoice_1 = require("./classes/invoice");
+var payment_1 = require("./classes/payment");
+var jame = {
     name: 'Jame',
     age: 20,
-    speak(text) {
+    speak: function (text) {
         console.log('🔥', text);
     },
-    spend(amount) {
+    spend: function (amount) {
         console.log('🔥', amount);
         return amount;
     }
 };
 console.log('🔥', jame.name);
-//🚩 class
-class Invoice {
-    /* readonly client: string */
-    /* private details: string */
-    /* public amount: number */
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    format() {
-        return `${this.client} owes ${this.amount} for ${this.details}`;
-    }
-}
-const invOne = new Invoice('Jame', 'Work on website', 200);
-const invTwo = new Invoice('Foo', 'Work on Bar', 100);
-let invoices = [];
+var invOne = new invoice_1.Invoice('Jame', 'Work on website', 200);
+var invTwo = new invoice_1.Invoice('Foo', 'Work on Bar', 100);
+var invoices = [];
 invoices.push(invOne, invTwo);
 console.log('🟢', invoices);
-invoices.forEach((inv) => {
+invoices.forEach(function (inv) {
     console.log('📀', inv.client, inv.amount);
     console.log('🌀', inv.format());
 });
+var docOne;
+var docTwo;
+docOne = new invoice_1.Invoice('pleum', 'car', 300);
+docTwo = new payment_1.Payment('dew', 'bus', 500);
+var doc = [];
+doc.push(docOne, docTwo);
+console.log('📍', doc[0].format());
+console.log('📍', doc[1].format());

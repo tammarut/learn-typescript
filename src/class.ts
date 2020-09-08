@@ -1,7 +1,9 @@
 class Human {
   private _age: number;
 
-  constructor(protected name: string) {}
+  constructor(protected name: string) {
+    this._age = 0
+  }
 
   get age() {
     return this._age;

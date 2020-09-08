@@ -20,7 +20,7 @@ console.log("🔥", list);
 
 // void
 function setName(name: string): void {
-  this.name = name;
+  console.log("🔥", name);
 }
 
 // Type Assertions

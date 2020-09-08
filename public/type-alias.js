@@ -1,15 +1,15 @@
 "use strict";
-const logDetails = (uid, item) => {
-    console.log(`🔥 ${item} has a uid of ${uid}`);
+var logDetails = function (uid, item) {
+    console.log("\uD83D\uDD25 " + item + " has a uid of " + uid);
 };
 logDetails('100', 'foo');
-const hi = (user) => {
-    console.log(`🔥 ${user.name} says hi❗`);
+var hi = function (user) {
+    console.log("\uD83D\uDD25 " + user.name + " says hi\u2757");
 };
-const hiAgain = (user) => {
-    console.log(`🔥 ${user.name} says hi again❗`);
+var hiAgain = function (user) {
+    console.log("\uD83D\uDD25 " + user.name + " says hi again\u2757");
 };
-let user = {
+var user = {
     name: 'arima',
     uid: '400'
 };

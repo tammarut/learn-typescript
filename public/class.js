@@ -1,47 +1,75 @@
 "use strict";
-class Human {
-    constructor(name) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Human = /** @class */ (function () {
+    function Human(name) {
         this.name = name;
+        this._age = 0;
     }
-    get age() {
-        return this._age;
-    }
-    set age(age) {
-        if (age > 0 && age <= 100)
-            this._age = age;
-    }
+    Object.defineProperty(Human.prototype, "age", {
+        get: function () {
+            return this._age;
+        },
+        set: function (age) {
+            if (age > 0 && age <= 100)
+                this._age = age;
+        },
+        enumerable: false,
+        configurable: true
+    });
     /* setAge(age: number) { */
     /*   if (age > 0 && age <= 100) this._age = age; */
     /* } */
-    printName() {
+    Human.prototype.printName = function () {
         console.log("▶My name is", this.name);
-    }
-}
-class Woman extends Human {
-    constructor(name, color) {
+    };
+    return Human;
+}());
+var Woman = /** @class */ (function (_super) {
+    __extends(Woman, _super);
+    function Woman(name, color) {
+        var _this = 
         // Need super() ⇨for child class
-        super(name);
-        this.color = color;
+        _super.call(this, name) || this;
+        _this.color = color;
+        return _this;
     }
-}
-class Man extends Human {
-    constructor(name) {
-        super(name);
+    return Woman;
+}(Human));
+var Man = /** @class */ (function (_super) {
+    __extends(Man, _super);
+    function Man(name) {
+        return _super.call(this, name) || this;
     }
-    ordain() {
-        console.log(`${this.name} has already been a Buddhist monk!`);
-    }
-}
+    Man.prototype.ordain = function () {
+        console.log(this.name + " has already been a Buddhist monk!");
+    };
+    return Man;
+}(Human));
 // 🔱Static
-class Circle {
-}
-Circle.PI = 3.14;
+var Circle = /** @class */ (function () {
+    function Circle() {
+    }
+    Circle.PI = 3.14;
+    return Circle;
+}());
 console.log("🔰", Circle.PI);
-const circleClass = Circle;
+var circleClass = Circle;
 console.log("🔰", circleClass);
-const dew = new Human("Dew");
-const L = new Woman("Top", "pink");
-const akira = new Man("Akira");
+var dew = new Human("Dew");
+var L = new Woman("Top", "pink");
+var akira = new Man("Akira");
 akira.ordain();
 dew.printName();
 dew.age = 100;

@@ -1,43 +1,43 @@
 "use strict";
 // 📌explicit types
-let char;
-let age;
-let isLoggedIn;
+var char;
+var age;
+var isLoggedIn;
 age = 20;
 isLoggedIn = true;
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 // 📌arrays
-let ninjas = [];
+var ninjas = [];
 ninjas.push('foo');
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 // 📌union types
-let mixed = [];
+var mixed = [];
 mixed.push('foomix');
 mixed.push('49');
 mixed.push(false);
 console.log('🔥', mixed);
-let uid;
+var uid;
 uid = 123;
 uid = '123';
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 // 📌objects
-let ninjaOne;
+var ninjaOne;
 ninjaOne = { name: 'foo', age: 20 };
 console.log('🔥', ninjaOne);
-let ninjaTwo;
+var ninjaTwo;
 ninjaTwo = {
     name: 'mario',
     age: 30,
     beltColor: 'red'
 };
 console.log('🔥', ninjaTwo);
-let width = 20;
+var width = 20;
 width = true;
 width = 'foo';
 width = { value: '60' };
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 // 📌any
-let ninjaThree;
+var ninjaThree;
 ninjaThree = { name: 'ninjaThree', age: 20 };
 console.log('🔥', ninjaThree);
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
