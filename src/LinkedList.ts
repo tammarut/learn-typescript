@@ -1,9 +1,5 @@
 class MyNode<T> {
-
-   constructor(
-      public data: T,
-      public next: MyNode<T> | null = null
-   ) { }
+  constructor(public data: T, public next: MyNode<T> | null = null) {}
 }
 
 const nodeA = new MyNode<string>('foo')

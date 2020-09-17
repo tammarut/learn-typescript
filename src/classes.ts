@@ -19,7 +19,7 @@ const jame: IsPerson = {
   spend(amount: number): number {
     console.log('🔥', amount)
     return amount
-  }
+  },
 }
 console.log('🔥', jame.name)
 
