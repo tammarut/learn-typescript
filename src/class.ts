@@ -1,16 +1,18 @@
 class Human {
-  private _age: number;
+  private _age: number
 
   constructor(protected name: string) {
     this._age = 0
   }
 
   get age() {
-    return this._age;
+    return this._age
   }
 
-  set age(age: number) {
-    if (age > 0 && age <= 100) this._age = age;
+  set age(newAge: number) {
+    if (newAge > 0 && newAge <= 100) {
+      this._age = newAge
+    }
   }
 
   /* setAge(age: number) { */
@@ -18,48 +20,44 @@ class Human {
   /* } */
 
   printName() {
-    console.log("▶My name is", this.name);
+    console.log('▶My name is', this.name)
   }
 }
 
 class Woman extends Human {
-  color: string;
+  color: string
 
   constructor(name: string, color: string) {
     // Need super() ⇨for child class
-    super(name);
+    super(name)
 
-    this.color = color;
+    this.color = color
   }
 }
 
 class Man extends Human {
   constructor(name: string) {
-    super(name);
+    super(name)
   }
 
   ordain() {
-    console.log(`${this.name} has already been a Buddhist monk!`);
+    console.log(`${this.name} has already been a Buddhist monk!`)
   }
 }
 
 // 🔱Static
 class Circle {
-  static PI = 3.14;
+  static PI = 3.14
 }
 
-console.log("🔰", Circle.PI);
-const circleClass: typeof Circle = Circle;
-console.log("🔰", circleClass);
+console.log('🔰', Circle.PI)
+const circleClass: typeof Circle = Circle
+console.log('🔰', circleClass)
 
-const dew = new Human("Dew");
-const L = new Woman("Top", "pink");
-const akira = new Man("Akira");
+const dew = new Human('Dew')
+const L = new Woman('Top', 'pink')
+const akira = new Man('Akira')
 
-akira.ordain();
-
-dew.printName();
-dew.age = 100;
-dew.printName();
-console.log(dew);
-L.printName();
+akira.ordain()
+akira.age = 20
+console.log(`🔥${akira.age}`)

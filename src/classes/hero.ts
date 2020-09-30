@@ -1,12 +1,27 @@
-abstract class Hero {
-  constructor(public name: string, public hp: number, public mp: number, public moveSpeed: number) {}
+// 🛑Composition over inheritance
+interface IHeroSkill {
+  skill1(): void
+  skill2(): void
+  skill3(): void
+  skill4(): void
+}
+
+interface IHeroDetail {
+  name: string
+  hp: number
+  mp: number
+  moveSpeed: number
+}
+
+abstract class Hero implements IHeroSkill {
+  constructor(protected heroDetail: IHeroDetail) {}
 
   get description() {
     return `
-    Name: ${this.name}
-    HP: ${this.hp}
-    MP: ${this.mp}
-    Move Speed: ${this.moveSpeed}
+    Name: ${this.heroDetail.name}
+    HP: ${this.heroDetail.hp}
+    MP: ${this.heroDetail.mp}
+    Move Speed: ${this.heroDetail.moveSpeed}
     `
   }
 
@@ -16,6 +31,7 @@ abstract class Hero {
   abstract skill4(): void
 }
 
+// Implementation
 class Zeus extends Hero {
   skill1() {
     console.log('⚡Chain bolt')
@@ -33,23 +49,13 @@ class Zeus extends Hero {
   }
 }
 
-class Void extends Hero {
-  skill1() {
-    console.log('Jump')
-  }
-  skill2() {
-    console.log('Dodge')
-  }
-  skill3() {
-    console.log('Lock foot')
-  }
-
-  skill4() {
-    console.log('Dome')
-  }
+const zeusDetail: IHeroDetail = {
+  name: 'Zeus',
+  hp: 500,
+  mp: 600,
+  moveSpeed: 500
 }
-
-const zeusInstance = new Zeus('Zeus', 500, 500, 300)
+const zeusInstance = new Zeus(zeusDetail)
 console.log(zeusInstance.description)
 zeusInstance.skill1()
 zeusInstance.skill2()

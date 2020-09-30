@@ -21,9 +21,10 @@ var Human = /** @class */ (function () {
         get: function () {
             return this._age;
         },
-        set: function (age) {
-            if (age > 0 && age <= 100)
-                this._age = age;
+        set: function (newAge) {
+            if (newAge > 0 && newAge <= 100) {
+                this._age = newAge;
+            }
         },
         enumerable: false,
         configurable: true
@@ -32,7 +33,7 @@ var Human = /** @class */ (function () {
     /*   if (age > 0 && age <= 100) this._age = age; */
     /* } */
     Human.prototype.printName = function () {
-        console.log("▶My name is", this.name);
+        console.log('▶My name is', this.name);
     };
     return Human;
 }());
@@ -64,15 +65,12 @@ var Circle = /** @class */ (function () {
     Circle.PI = 3.14;
     return Circle;
 }());
-console.log("🔰", Circle.PI);
+console.log('🔰', Circle.PI);
 var circleClass = Circle;
-console.log("🔰", circleClass);
-var dew = new Human("Dew");
-var L = new Woman("Top", "pink");
-var akira = new Man("Akira");
+console.log('🔰', circleClass);
+var dew = new Human('Dew');
+var L = new Woman('Top', 'pink');
+var akira = new Man('Akira');
 akira.ordain();
-dew.printName();
-dew.age = 100;
-dew.printName();
-console.log(dew);
-L.printName();
+akira.age = 20;
+console.log("\uD83D\uDD25" + akira.age);
