@@ -10,6 +10,7 @@ interface IsPerson {
   spend(a: number): number
 }
 
+//一一一一一一一一一一一一一一一一一一一一一一
 const jame: IsPerson = {
   name: 'Jame',
   age: 20,
@@ -22,7 +23,7 @@ const jame: IsPerson = {
   }
 }
 console.log('🔥', jame.name)
-
+//一一一一一一一一一一一一一一一一一一一一一一
 const invOne = new Invoice('Jame', 'Work on website', 200)
 const invTwo = new Invoice('Foo', 'Work on Bar', 100)
 
@@ -35,6 +36,7 @@ invoices.forEach((inv) => {
   console.log('🌀', inv.format())
 })
 
+//一一一一一一一一一一一一一一一一一一一一一一
 let docOne: HasFormatter
 let docTwo: HasFormatter
 docOne = new Invoice('pleum', 'car', 300)
